@@ -7,5 +7,5 @@ class Animal:
         self.notes = notes
         self.owner = owner
         self.owner_tel = owner_tel
-        self.ownner_email = owner_email
+        self.owner_email = owner_email
         self.id = id

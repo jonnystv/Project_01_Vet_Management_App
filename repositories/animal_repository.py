@@ -13,4 +13,9 @@ def save(animal):
     animal.id = id
     return animal
 
+
+def delete_all():
+    sql = "DELETE FROM animals"
+    run_sql(sql)
+
     

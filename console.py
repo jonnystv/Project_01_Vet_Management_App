@@ -3,6 +3,8 @@ from models.animal import Animal
 import repositories.vet_repository as vet_repository
 import repositories.animal_repository as animal_repository
 
+animal_repository.delete_all()
+vet_repository.delete_all()
 
 vet_1 = Vet("Dr Doolittle")
 vet_repository.save(vet_1)

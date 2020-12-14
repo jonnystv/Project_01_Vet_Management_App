@@ -1,3 +1,5 @@
+import pdb
+
 from models.vet import Vet
 from models.animal import Animal
 import repositories.vet_repository as vet_repository
@@ -29,3 +31,10 @@ animal_repository.save(animal_3)
 
 animal_4 = Animal("Cornelius", "Chimpanzee", "12-11-1995", "25", "Nasty bruise to forehead. Possible X-Ray", "George Taylor", "07922175003", "dirty@ape.com", vet_4)
 animal_repository.save(animal_4)
+
+# pdb.set_trace()
+
+vet_repository.select_all()
+
+for vet in vet_repository.select_all():
+    print(vet.__dict__)

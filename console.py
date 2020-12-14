@@ -1,5 +1,3 @@
-import pdb
-
 from models.vet import Vet
 from models.animal import Animal
 import repositories.vet_repository as vet_repository
@@ -21,7 +19,7 @@ vet_repository.save(vet_4)
 animal_1 = Animal("Spot", "Cat", "15-06-2005", "15", "Deep gash on nose to be treated", "Commander Data", "07922175003", "star@trek.com", vet_1)
 animal_repository.save(animal_1)
 
-animal_2 = Animal("Twiggy", "Stick Insect", "10-10-2019", "1", "Leg pulled off by spider. Replacement leg needed", "David Bellamy", "07922175003", "cdavid@bellamy.com", vet_2)
+animal_2 = Animal("Twiggy", "Stick Insect", "10-10-2019", "1", "Leg pulled off by spider. Replacement leg needed", "David Bellamy", "07922175003", "cdavid@bellamy.com", vet_1)
 animal_repository.save(animal_2)
 
 animal_3 = Animal("Zeus", "Silverback", "17-10-1990", "30", "Ingrowing toenail, left pinky toe", "Jo Mobutu", "07922175003", "big@thief.com", vet_3)

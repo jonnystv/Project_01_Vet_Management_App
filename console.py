@@ -34,7 +34,11 @@ animal_repository.save(animal_4)
 
 # pdb.set_trace()
 
-vet_repository.select_all()
-
 for vet in vet_repository.select_all():
+    print(vet.__dict__)
+
+for animal in animal_repository.select_all():
+    print(animal.__dict__)
+
+for vet in vet_repository.select(id):
     print(vet.__dict__)

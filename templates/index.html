@@ -4,4 +4,16 @@
 
 {% for vet in vets %}
 
-<p>{{vet.name}}</p> {% endfor %} {% endblock %}
+<p>
+    {{vet.name}}
+</p>
+
+{% endfor %} {% for animal in animals %}
+
+<p>{{animal.name}} : {{animal.type}} : {{animal.dob}} : {{animal.age}}</br>
+    {{animal.notes}}</br>
+    {{animal.owner}} : {{animal.owner_tel}} : {{animal.owner_email}}</br>
+    {{animal.vet}}</br>
+</p>
+
+{% endfor %} {% endblock %}

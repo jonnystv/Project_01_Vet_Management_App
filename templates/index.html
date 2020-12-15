@@ -2,28 +2,32 @@
 
 <h2>Practice Overview</h2>
 
-<h3>Animal Details</h3>
+<h3>Animal Inventory Summary</h3>
 
 <table>
     {% for animal in animals %}
     <tr>
         <th>Name</th>
-        <td>{{animal.name}}</td>
+        <td>{{animal.name}} - <a href="#">FULL DETAILS</a></td>
     </tr>
     <tr>
         <th>Type</th>
         <td>{{animal.type}}</td>
     </tr>
-    <tr>
+    <!-- <tr>
         <th>D.O.B.</th>
         <td>{{animal.dob}}</td>
+    </tr> -->
+    <tr>
+        <th>Age</th>
+        <td>{{animal.age}} Years Old</td>
     </tr>
     <tr>
         <th>Treatment Notes</th>
         <td>{{animal.notes}}</td>
     </tr>
     <tr>
-        <th>Owner</th>
+        <!-- <th>Owner</th>
         <td>{{animal.owner}}</td>
     </tr>
     <tr>
@@ -33,16 +37,16 @@
     <tr>
         <th>Owner Email</th>
         <td>{{animal.owner_email}}</td>
-    </tr>
-    <tr>
-        <th>Vet</th>
-        <td>{{animal.vet.name}}</td>
-    </tr>
-    <tr>
-        <th>Actions</th>
-        <td><a href="#">EDIT ANIMAL</a> <a href="#">DELETE ANIMAL</a></td>
-    </tr>
-    {% endfor %}
+    </tr> -->
+        <tr>
+            <th>Vet</th>
+            <td>{{animal.vet.name}}</td>
+        </tr>
+        <tr>
+            <th>Actions</th>
+            <td><a href="#">EDIT ANIMAL</a> <a href="#">DELETE ANIMAL</a></td>
+        </tr>
+        {% endfor %}
 </table>
 
 {% endblock %}

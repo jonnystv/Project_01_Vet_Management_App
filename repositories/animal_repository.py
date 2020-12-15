@@ -16,6 +16,18 @@ def save(animal):
 
 #READ
 def select_all():
+    animals_page = []
+
+    sql = "SELECT * FROM animals"
+    results = run_sql(sql)
+
+    for row in results:
+        vet = vet_repository.select(row['vet_id'])
+        animal = Animal(row['name'], row['type'], row['dob'], row['age'], row['notes'], row['owner'], row['owner_tel'], row['owner_email'], vet, row['id'])
+        animals_page.append(animal)
+    return animals_page
+
+def select_all_animals():
     animals = []
 
     sql = "SELECT * FROM animals"

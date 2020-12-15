@@ -1,9 +1,9 @@
 from db.run_sql import run_sql
 
-from models.vet import Vet
 from models.animal import Animal
-import repositories.vet_repository as vet_repository
+from models.vet import Vet
 import repositories.animal_repository as animal_repository
+import repositories.vet_repository as vet_repository
 
 #CREATE
 def save(vet):

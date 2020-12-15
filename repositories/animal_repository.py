@@ -1,13 +1,13 @@
 from db.run_sql import run_sql
 
-from models.vet import Vet
 from models.animal import Animal
-import repositories.vet_repository as vet_repository
+from models.vet import Vet
 import repositories.animal_repository as animal_repository
+import repositories.vet_repository as vet_repository
 
 #CREATE
 def save(animal):
-    sql = "INSERT INTO animals( name, type, dob, age, notes, owner, owner_tel, owner_email, vet_id ) VALUES ( %s, %s, %s, %s, %s, %s, %s, %s, %s ) RETURNING id"
+    sql = "INSERT INTO animals( name, type, dob, age, notes, owner, owner_tel, owner_email, vet_id ) VALUES ( %s, %s, %s, %s, %s, %s, %s, %s, %s ) RETURNING *"
     values = [animal.name, animal.type, animal.dob, animal.age, animal.notes, animal.owner, animal.owner_tel, animal.owner_email, animal.vet.id]
     results = run_sql(sql, values)
     id = results[0]['id']
@@ -22,7 +22,8 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        animal = Animal(row['name'], row['type'], row['dob'], row['age'], row['notes'], row['owner'], row['owner_tel'], row['owner_email'], row['vet_id'], row['id'])
+        vet = vet_repository.select(row['vet_id'])
+        animal = Animal(row['name'], row['type'], row['dob'], row['age'], row['notes'], row['owner'], row['owner_tel'], row['owner_email'], vet, row['id'])
         animals.append(animal)
     return animals
 
@@ -33,7 +34,8 @@ def select(id):
     result = run_sql(sql, values)[0]
 
     if result is not None:
-        animal = Animal(result['name'], result['type'], result['dob'], result['age'], result['notes'], result['owner'], result['owner_tel'], result['owner_email'], result['vet_id'], result['id'])
+        vet = vet_repository.select(result['vet_id'])
+        animal = Animal(result['name'], result['type'], result['dob'], result['age'], result['notes'], result['owner'], result['owner_tel'], result['owner_email'], vet, result['id'])
     return animal
 
 #DELETE

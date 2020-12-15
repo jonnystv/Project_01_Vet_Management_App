@@ -1,13 +1,48 @@
-{% extends 'base.html'%} {% block content %}
+{% extends 'base.html' %} {% block content %}
 
-<h1>Vet App Test</h1>
+<h2>Practice Overview</h2>
 
-{% for animal in animals %}
+<h3>Animal Details</h3>
 
-<p>{{animal.name}} : {{animal.type}} : {{animal.dob}} : {{animal.age}}</br>
-    {{animal.notes}}</br>
-    {{animal.owner}} : {{animal.owner_tel}} : {{animal.owner_email}}</br>
-    {{animal.vet}}</br>
-</p>
+<table>
+    {% for animal in animals %}
+    <tr>
+        <th>Name</th>
+        <td>{{animal.name}}</td>
+    </tr>
+    <tr>
+        <th>Type</th>
+        <td>{{animal.type}}</td>
+    </tr>
+    <tr>
+        <th>D.O.B.</th>
+        <td>{{animal.dob}}</td>
+    </tr>
+    <tr>
+        <th>Treatment Notes</th>
+        <td>{{animal.notes}}</td>
+    </tr>
+    <tr>
+        <th>Owner</th>
+        <td>{{animal.owner}}</td>
+    </tr>
+    <tr>
+        <th>Owner Tel. No.</th>
+        <td>{{animal.owner_tel}}</td>
+    </tr>
+    <tr>
+        <th>Owner Email</th>
+        <td>{{animal.owner_email}}</td>
+    </tr>
+    <tr>
+        <th>Vet</th>
+        <td>{{animal.vet.name}}</td>
+    </tr>
+    <tr>
+        <th>Actions</th>
+        <td><a href="#">EDIT ANIMAL</a> <a href="#">DELETE ANIMAL</a></td>
+    </tr>
+    {% endfor %}
+</table>
 
-{% endfor %} {% endblock %}
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends 'base.html' %} {% block content %}
+
+<h2>Individual Animal Details</h2>
+
+<table>
+    <tr>
+        <th>Name:</th>
+        <td>{{animal.name}}</td>
+    </tr>
+    <tr>
+        <th>Type:</th>
+        <td>{{animal.type}}</td>
+    </tr>
+    <tr>
+        <th>D.O.B.:</th>
+        <td>{{animal.dob}}</td>
+    </tr>
+    <tr>
+        <th>Age:</th>
+        <td>{{animal.age}} Years Old</td>
+    </tr>
+    <tr>
+        <th>Treatment Notes:</th>
+        <td>{{animal.notes}}</td>
+    </tr>
+    <tr>
+        <th>Owner:</th>
+        <td>{{animal.owner}}</td>
+    </tr>
+    <tr>
+        <th>Owner Tel. No.:</th>
+        <td>{{animal.owner_tel}}</td>
+    </tr>
+    <tr>
+        <th>Owner Email:</th>
+        <td>{{animal.owner_email}}</td>
+    </tr>
+    <tr>
+        <th>Vet:</th>
+        <td>{{animal.vet.name}}</td>
+    </tr>
+    <tr>
+        <th>Actions:</th>
+        <td><a href="#">EDIT ANIMAL</a>
+            <form action="/animals/{{animal.id}}/delete" method="POST">
+                <button type="submit" value="delete">DELETE ANIMAL</button>
+            </form>
+        </td>
+    </tr>
+</table>
+
+{% endblock %}

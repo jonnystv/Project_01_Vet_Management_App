@@ -8,7 +8,7 @@
     {% for animal in animals %}
     <tr>
         <th>Name:</th>
-        <td>{{animal.name}} - <a href="#">FULL DETAILS</a></td>
+        <td>{{animal.name}} - <a href="/animals/{{ animal.id }}">FULL DETAILS</a></td>
     </tr>
     <tr>
         <th>Type:</th>
@@ -29,7 +29,11 @@
         </tr>
         <tr>
             <th>Actions:</th>
-            <td><a href="#">EDIT ANIMAL</a> <a href="#">DELETE ANIMAL</a></td>
+            <td><a href="#">EDIT ANIMAL</a>
+                <form action="/animals/{{animal.id}}/delete" method="POST">
+                    <button type="submit" value="delete">DELETE ANIMAL</button>
+                </form>
+            </td>
         </tr>
         {% endfor %}
 </table>

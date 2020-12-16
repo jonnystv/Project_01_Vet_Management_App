@@ -20,8 +20,8 @@ def new_vet():
 @vets_blueprint.route("/vets", methods=["POST"])
 def add_vet():
     name = request.form["name"]
-    new_vet = Vet(name)
-    vet_repository.save(new_vet)
+    vet = Vet(name)
+    vet_repository.save(vet)
     return redirect("/vets")
 
 @vets_blueprint.route("/vets/<id>/delete", methods=['POST'])

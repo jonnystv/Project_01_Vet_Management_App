@@ -1,24 +1,16 @@
 {% extends 'base.html' %} {% block content %}
 
-<h2>Vet Details</h2>
+<h2>Vet Roster</h2>
 
-<table>
-    {% for vet in vets %}
-    <tr>
-        <th>Vet:</th>
-        <td>{{vet.name}}</td>
-    </tr>
-    <tr>
-        <th> </th>
-        <td>
-            <form action="/vets/{{vet.id}}/delete" method="POST">
-                <button type="submit" value="delete">DELETE VET</button>
-            </form>
-        </td>
-    </tr>
+{% for vet in vets %}
+<p>{{vet.name}}
+    <form action="/vets/{{vet.id}}/delete" method="POST">
+        <button type="submit" value="delete">DELETE VET</button>
+    </form>
+</p>
 
 
-    {% endfor %}
+{% endfor %}
 </table>
 
 {% endblock %}

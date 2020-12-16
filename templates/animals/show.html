@@ -41,7 +41,7 @@
     </tr>
     <tr>
         <th>Actions:</th>
-        <td><a href="#">EDIT ANIMAL</a>
+        <td><a href="/animals/{{ animal.id }}/edit">EDIT ANIMAL</a>
             <form action="/animals/{{animal.id}}/delete" method="POST">
                 <button type="submit" value="delete">DELETE ANIMAL</button>
             </form>

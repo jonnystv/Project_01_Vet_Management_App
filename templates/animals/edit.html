@@ -28,13 +28,13 @@
         <input type="text" id="owner_email" name="owner_email" value="{{animal.owner_email}}"><br>
 
         <label for="vet_id">Assign a Vet:</label>
-        <select id="vet" name="vet_id" size="1">
+        <select name="vet_id" id="vet" size="1">
             {% for vet in vets %}
-            <option value="{{vet.id}}" {% if vet.id == animal.vet.name %} selected {% endif %}>{{vet.name}}</option>
+            <option value="{{vet.id}}" {% if vet.id == animal.vet.id %} selected {% endif %}>{{vet.name}}</option>
             {% endfor %}
         </select>
 
-        <input type="submit" value="Add Animal">
+        <input type="submit" value="Update Animal">
     </fieldset>
 </form>
 

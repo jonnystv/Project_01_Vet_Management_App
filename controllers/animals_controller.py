@@ -21,3 +21,18 @@ def animals_page():
 @animals_blueprint.route("/animals/new")
 def new_animal():
     return render_template("/animals/new.html")
+
+@animals_blueprint.route("/animals", methods=["POST"])
+def add_animal():
+    name = request.form["name"]
+    type = request.form["type"]
+    dob = request.form["dob"]
+    age = request.form["age"]
+    notes = request.form["notes"]
+    owner = request.form["owner"]
+    owner_tel = request.form["owner_tel"]
+    owner_email = request.form["owner_email"]
+    vet_id = request.form["vet_id"]
+    new_animal = Animal(name)
+    animal_repository.save(new_animal)
+    return redirect("/animals")

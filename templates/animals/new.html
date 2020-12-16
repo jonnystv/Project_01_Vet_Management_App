@@ -29,11 +29,9 @@
 
         <label for="vet_id">Assign a Vet:</label>
         <select id="vet_id" name="vet_id" size="1">
-            <option value="Assign a Vet">Assign a Vet</option>
-            <option value="Dr Dolittle">Dr Dolittle</option>
-            <option value="Dr Herriot">Dr Herriot</option>
-            <option value="Dr Hamster">Dr Hamster</option>
-            <option value="Dr Greene">Dr Greene</option>
+            {% for vet in vets %}
+            <option value="{{vet_id}}">{{animal.vet.name}}</option>
+            {% endfor %}
         </select>
 
         <input type="submit" value="Add Animal">

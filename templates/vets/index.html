@@ -1,0 +1,20 @@
+{% extends 'base.html' %} {% block content %}
+
+<h2>Vet Details</h2>
+
+<table>
+    {% for vet in vets %}
+    <tr>
+        <th>Vet:</th>
+        <td>{{vet.name}}</td>
+    </tr>
+    <tr>
+        <th>Actions:</th>
+        <td><a href="#">EDIT VET</a> <a href="#">DELETE VET</a></td>
+    </tr>
+
+
+    {% endfor %}
+</table>
+
+{% endblock %}

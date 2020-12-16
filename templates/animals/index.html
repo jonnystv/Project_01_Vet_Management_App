@@ -1,49 +1,47 @@
 {% extends 'base.html' %} {% block content %}
 
-<h2>Practice Overview</h2>
-
-<h3>Full Animal Inventory Details</h3>
+<h2>Full Animal Inventory Details</h2>
 
 <table>
     {% for animal in animals %}
     <tr>
-        <th>Name</th>
+        <th>Name:</th>
         <td>{{animal.name}}</td>
     </tr>
     <tr>
-        <th>Type</th>
+        <th>Type:</th>
         <td>{{animal.type}}</td>
     </tr>
     <tr>
-        <th>D.O.B.</th>
+        <th>D.O.B.:</th>
         <td>{{animal.dob}}</td>
     </tr>
     <tr>
-        <th>Age</th>
+        <th>Age:</th>
         <td>{{animal.age}} Years Old</td>
     </tr>
     <tr>
-        <th>Treatment Notes</th>
+        <th>Treatment Notes:</th>
         <td>{{animal.notes}}</td>
     </tr>
     <tr>
-        <th>Owner</th>
+        <th>Owner:</th>
         <td>{{animal.owner}}</td>
     </tr>
     <tr>
-        <th>Owner Tel. No.</th>
+        <th>Owner Tel. No.:</th>
         <td>{{animal.owner_tel}}</td>
     </tr>
     <tr>
-        <th>Owner Email</th>
+        <th>Owner Email:</th>
         <td>{{animal.owner_email}}</td>
     </tr>
     <tr>
-        <th>Vet</th>
+        <th>Vet:</th>
         <td>{{animal.vet.name}}</td>
     </tr>
     <tr>
-        <th>Actions</th>
+        <th>Actions:</th>
         <td><a href="#">EDIT ANIMAL</a> <a href="#">DELETE ANIMAL</a></td>
     </tr>
     {% endfor %}

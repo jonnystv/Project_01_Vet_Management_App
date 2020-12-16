@@ -14,5 +14,12 @@ def vets():
     return render_template("/vets/index.html", vets = vets)
 
 @vets_blueprint.route("/vets/new")
-def new_vetl():
+def new_vet():
     return render_template("/vets/new.html")
+
+@vets_blueprint.route("/vets", methods=["POST"])
+def add_vet():
+    name = request.form["name"]
+    new_vet = Vet(name)
+    vet_repository.save(new_vet)
+    return redirect("/vets")

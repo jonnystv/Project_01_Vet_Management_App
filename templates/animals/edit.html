@@ -1,0 +1,41 @@
+{% extends 'base.html' %} {% block content %}
+
+<form action="/animals/new" method="POST">
+    <fieldset>
+        <legend>Add a new animal to the practice:</legend>
+        <label for="name">Animal's Name:</label><br>
+        <input type="text" id="name" name="name"><br>
+
+        <label for="type">Animal Type:</label><br>
+        <input type="text" id="type" name="type"><br>
+
+        <label for="dob">Date of Birth:</label><br>
+        <input type="text" id="dob" name="dob"><br>
+
+        <label for="age">Animal's Age:</label><br>
+        <input type="text" id="age" name="age"><br>
+
+        <label for="notes">Treatment Notes:</label>
+        <textarea name="notes" id="notes" cols="30" rows="10"></textarea>
+
+        <label for="owner">Animal's Owner:</label><br>
+        <input type="text" id="owner" name="owner"><br>
+
+        <label for="owner_tel">Owner's Telephone:</label><br>
+        <input type="text" id="owner_tel" name="owner_tel"><br>
+
+        <label for="owner_email">Owner's Email:</label><br>
+        <input type="text" id="owner_email" name="owner_email"><br>
+
+        <label for="vet_id">Assign a Vet:</label>
+        <select id="vet_id" name="vet_id" size="1">
+            {% for vet in vets %}
+            <option value="{{vet_id}}">{{animal.vet.name}}</option>
+            {% endfor %}
+        </select>
+
+        <input type="submit" value="Add Animal">
+    </fieldset>
+</form>
+
+{% endblock %}

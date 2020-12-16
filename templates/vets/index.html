@@ -9,8 +9,12 @@
         <td>{{vet.name}}</td>
     </tr>
     <tr>
-        <th>Actions:</th>
-        <td><a href="#">EDIT VET</a> <a href="#">DELETE VET</a></td>
+        <th> </th>
+        <td>
+            <form action="/vets/{{vet.id}}/delete" method="POST">
+                <button type="submit" value="delete">DELETE VET</button>
+            </form>
+        </td>
     </tr>
 
 

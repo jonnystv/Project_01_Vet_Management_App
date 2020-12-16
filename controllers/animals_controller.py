@@ -22,7 +22,7 @@ def animals_page():
 def new_animal():
     return render_template("/animals/new.html")
 
-@animals_blueprint.route("/animals", methods=["POST"])
+@animals_blueprint.route("/animals/", methods=["POST"])
 def add_animal():
     name = request.form["name"]
     type = request.form["type"]
@@ -33,6 +33,7 @@ def add_animal():
     owner_tel = request.form["owner_tel"]
     owner_email = request.form["owner_email"]
     vet_id = request.form["vet_id"]
-    new_animal = Animal(name)
+    vet = vet_repository.select(vet_id)
+    new_animal = Animal(name, type, dob, age, notes, owner, owner_email, owner_tel, vet)
     animal_repository.save(new_animal)
     return redirect("/animals")

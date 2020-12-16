@@ -17,3 +17,7 @@ def animals():
 def animals_page():
     animals = animal_repository.select_all_animals()
     return render_template("/animals/index.html", animals = animals)
+
+@animals_blueprint.route("/animals/new")
+def new_animal():
+    return render_template("/animals/new.html")

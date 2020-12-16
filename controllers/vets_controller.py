@@ -13,7 +13,6 @@ def vets():
     vets = vet_repository.select_all()
     return render_template("/vets/index.html", vets = vets)
 
-# @vets_blueprint.route("/")
-# def vets():
-#     vets = vet_repository.select(id)
-#     return render_template("index.html", vets = vets
+@vets_blueprint.route("/vets/new")
+def new_vetl():
+    return render_template("/vets/new.html")

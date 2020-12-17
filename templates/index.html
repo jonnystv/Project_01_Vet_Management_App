@@ -1,11 +1,10 @@
 {% extends 'base.html' %} {% block content %}
 
-<h2>Practice Overview</h2>
+<h2>Animal & Vet Summary</h2>
 
-<h3>Animal & Vet Summary</h3>
 
-<table>
     {% for animal in animals %}
+    <table>
     <tr>
         <th>Name:</th>
         <td>{{animal.name}} - <a href="/animals/{{ animal.id }}">FULL DETAILS</a></td>
@@ -22,7 +21,7 @@
         <th>Treatment Notes:</th>
         <td>{{animal.notes}}</td>
     </tr>
-    <tr>
+    
         <tr>
             <th>Vet:</th>
             <td>{{animal.vet.name}}</td>
@@ -35,7 +34,8 @@
                 </form>
             </td>
         </tr>
+    </table>
         {% endfor %}
-</table>
+
 
 {% endblock %}

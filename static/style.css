@@ -4,6 +4,15 @@ body {
     padding: 0px;
     margin: 0px;
     text-align: center;
+    color: #2E5266;
+}
+
+h1, h2, h3, h4, h4, h6 {
+    text-align: left;
+}
+
+h2 {
+    margin-left: 20px;
 }
 
 ul {
@@ -16,6 +25,27 @@ header {
     padding: 0px;
 }
 
+footer {
+    background-color: #2e5266;
+    color: #d3d0cb;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+footer h2, footer p{
+    text-align: center;
+}
+
+footer a {
+    color: #d3d0cb;
+    text-decoration: none;
+}
+
+footer a:hover, footer a:active, footer a:focus {
+    color: #9fb1bc;
+    text-decoration: underline;
+}
+
 header h1 {
     margin: 0px;
     padding: 20px;
@@ -25,7 +55,7 @@ header h1 {
 
 #nav-container {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     margin-top: 5px;
     padding-top: 0px;
 }
@@ -33,15 +63,6 @@ header h1 {
 #nav-container ul {
     display: flex;
 }
-
-#main-nav li {
-}
-
-#edit-nav li{
-}
-
-/* #main-nav li, #edit-nav li {
-} */
 
 #main-nav li a, #edit-nav li a {
     text-decoration: none;
@@ -70,6 +91,49 @@ header h1 {
 #edit-nav li a:hover, #edit-nav li a:active, #edit-nav li a:focus {
     color: #d3d0cb;
     background-color: #2E5266;
+}
+
+table {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+th, td {
+    border: 1px solid #9FB1BC;
+    padding: 5px;
+}
+
+td a {
+    color: #d3d0cb;
+    text-decoration: none;padding: 3px;
+    background-color: #6E8898;
+}
+
+td a:hover, td a:active, td a:focus  {
+    background-color: #2E5266;
+}
+
+td button {
+    color: #d3d0cb;
+    text-decoration: none;padding: 3px;
+    background-color: #702626;
+    border: none;
+    margin-top: 10px;
+}
+
+td button:hover, button:active, td button:focus  {
+    background-color: #E2C044;
+    color: #2e5266;
+}
+
+th {
+    background-color: #9FB1BC;
+    font-weight: normal;
+    width: 25%;
+}
+
+td {
+    width: 75%;
 }
 
 

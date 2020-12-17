@@ -7,6 +7,10 @@ body {
     color: #2E5266;
 }
 
+main {
+    text-align: left;
+}
+
 h1, h2, h3, h4, h4, h6 {
     text-align: left;
 }
@@ -135,5 +139,39 @@ th {
 td {
     width: 75%;
 }
+
+p.vet {
+    margin-left: 20px;
+}
+
+button.vet-delete {
+    color: #d3d0cb;
+    text-decoration: none;padding: 3px;
+    background-color: #702626;
+    border: none;
+    margin-left: 20px;
+}
+
+button.vet-delete:hover, button.vet-delete:active, button.vet-delete:focus  {
+    background-color: #E2C044;
+    color: #2e5266;
+}
+
+form.edit-add {
+    margin-top: 20px;
+}
+
+fieldset {
+    border: none;
+}
+
+form input {
+    margin: 10px;
+}
+
+form label {
+    text-align: left;
+}
+
 
 

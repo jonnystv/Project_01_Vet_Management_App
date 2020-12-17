@@ -3,9 +3,9 @@
 <h2>Vet Roster</h2>
 
 {% for vet in vets %}
-<p>{{vet.name}}
+<p class="vet">{{vet.name}}
     <form action="/vets/{{vet.id}}/delete" method="POST">
-        <button type="submit" value="delete">DELETE VET</button>
+        <button class="vet-delete" type="submit" value="delete">DELETE VET</button>
     </form>
 </p>
 

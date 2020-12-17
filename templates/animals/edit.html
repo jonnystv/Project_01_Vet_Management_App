@@ -1,8 +1,8 @@
 {% extends 'base.html' %} {% block content %}
 
-<form action="/animals/{{animal.id}}" method="POST">
+<form class="edit-add" action="/animals/{{animal.id}}" method="POST">
     <fieldset>
-        <legend>Edit the Details of {{animal.name}} the {{animal.type}}</legend>
+        <legend><h2>Edit the Details of {{animal.name}} the {{animal.type}}</h2></legend>
         <label for="name">Animal's Name:</label><br>
         <input type="text" id="name" name="name" value="{{animal.name}}"><br>
 
@@ -16,7 +16,7 @@
         <input type="text" id="age" name="age" value="{{animal.age}}"><br>
 
         <label for="notes">Treatment Notes:</label>
-        <textarea name="notes" id="notes" cols="30" rows="10">{{animal.notes}}</textarea>
+        <textarea name="notes" id="notes" cols="30" rows="5">{{animal.notes}}</textarea></br>
 
         <label for="owner">Animal's Owner:</label><br>
         <input type="text" id="owner" name="owner" value="{{animal.owner}}"><br>

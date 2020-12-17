@@ -62,7 +62,7 @@ def update_animal(id):
     vet = vet_repository.select(request.form['vet_id'])
     animal = Animal(name, type, dob, age, notes, owner, owner_email, owner_tel, vet)
     animal_repository.update(animal)
-    return render_template("/animals/show", animal=animal, vets=vet)
+    return render_template("/animals/show.html", animal=animal, vets=vet)
 
 @animals_blueprint.route("/animals/<id>/delete", methods=['POST'])
 def delete_animal(id):
